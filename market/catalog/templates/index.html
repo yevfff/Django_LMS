@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store Home</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <span class="logo">Logo</span>
+      <ul class="nav-links">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li id="loginBtn" class="login-btn">Login</li>
+      </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+      <h2 class="section-title">New Arrivals</h2>
+      <div class="products new-arrivals">
+        <div class="card">
+          <img
+            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            alt="Product 1"
+          />
+          <div class="card-content">
+            <h2>Product 1</h2>
+            <div class="badge new-arrival">NEW ARRIVAL</div>
+            <p>Experience the best quality with Product 1.</p>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            alt="Product 1"
+          />
+          <div class="card-content">
+            <h2>Product 2</h2>
+            <div class="badge new-arrival">NEW ARRIVAL</div>
+            <p>Discover the latest trends with Product 2.</p>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            alt="Product 1"
+          />
+          <div class="card-content">
+            <h2>Product 3</h2>
+            <div class="badge new-arrival">NEW ARRIVAL</div>
+            <p>Innovative design meets functionality in Product 3.</p>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section-title">Best Sellers</h2>
+      <div class="products best-sellers">
+        <div class="card">
+          <img
+            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+            alt="Product 1"
+          />
+          <div class="card-content">
+            <h2>Product 4</h2>
+            <div class="badge bestseller">BESTSELLER</div>
+            <p>Our top-selling product with unmatched quality.</p>
+            <button class="buy-btn">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGIN MODAL -->
+    <div id="loginModal" class="modal hidden">
+      <div class="modal-content">
+        <h2>Login</h2>
+        <form action="">
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+          <button type="submit" class="submit-btn">Login</button>
+        </form>
+        <button id="closeModal" class="close-btn">&times;</button>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("loginBtn").addEventListener("click", () => {
+        document.getElementById("loginModal").classList.remove("hidden");
+      });
+
+      document.getElementById("closeModal").addEventListener("click", () => {
+        document.getElementById("loginModal").classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>

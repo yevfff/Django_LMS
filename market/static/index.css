@@ -1,0 +1,264 @@
+body { 
+    font-family: "Inter", sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    height: 56px;
+    padding: 0 32px;
+  }
+  
+  .logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+  
+  .nav-links li {
+    display: inline;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #732ec0;
+  }
+  
+  .login-btn {
+    color: #8a2be2;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font: inherit;
+  }
+  
+  .login-btn:hover {
+    color: #732ec0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+  
+  /* Заголовки секцій */
+  .section-title {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.75rem;
+    color: #333;
+  }
+  
+  /* Контейнер для товарів */
+  .products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  /* Карта товару */
+  .card {
+    position: relative;
+    background-color: #fff;
+    width: 320px;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(106, 13, 173, 0.2);
+  }
+  
+  .card img {
+    width: 100%;
+    height: 192px;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding: 1rem;
+    position: relative;
+  }
+  
+  .card-content h2 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .badge {
+    background: #e60073;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 8px;
+    display: inline-block;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Стиль для бейджа нових надходжень */
+  .badge.new-arrival {
+    background: #4caf50;
+  }
+  
+  .card-content p {
+    font-size: 0.875rem;
+    margin: 0;
+    color: #718096;
+  }
+  
+  .buy-btn {
+    display: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.75rem 1rem;
+    background: #8a2be2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1rem;
+    display: block;
+    margin-left: auto;
+  }
+  
+  .buy-btn:hover {
+    background: #732ec0;
+    transform: translateY(-2px);
+  }
+  
+  /* LOGIN MODAL */
+  .modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+    transition: all 0.3s ease;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    position: relative;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    animation: modalFadeIn 0.3s ease;
+  }
+  
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .modal-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #8a2be2;
+  }
+  
+  .modal-content input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  .modal-content input:focus {
+    border-color: #8a2be2;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2);
+  }
+  
+  .submit-btn {
+    background: #8a2be2;
+    width: 100%;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1rem;
+    display: block;
+  }
+  
+  .submit-btn:hover {
+    background: #732ec0;
+    transform: translateY(-2px);
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 24px;
+    color: #999;
+  }
+  
+  .close-btn:hover {
+    color: #8a2be2;
+  }
+  
