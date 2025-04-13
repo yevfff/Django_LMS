@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Форма зворотного зв’язку</title>
+</head>
+<body>
+    <h1>Форма зворотного зв’язку</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        
+        <p>
+            {{ form.name.label_tag }}<br>
+            {{ form.name }}
+            {% for error in form.name.errors %}
+                <div style="color:red;">{{ error }}</div>
+            {% endfor %}
+        </p>
+        
+        <p>
+            {{ form.email.label_tag }}<br>
+            {{ form.email }}
+            {% for error in form.email.errors %}
+                <div style="color:red;">{{ error }}</div>
+            {% endfor %}
+        </p>
+        
+        <p>
+            {{ form.subject.label_tag }}<br>
+            {{ form.subject }}
+            {% for error in form.subject.errors %}
+                <div style="color:red;">{{ error }}</div>
+            {% endfor %}
+        </p>
+        
+        <p>
+            {{ form.message.label_tag }}<br>
+            {{ form.message }}
+            {% for error in form.message.errors %}
+                <div style="color:red;">{{ error }}</div>
+            {% endfor %}
+        </p>
+        
+        <button type="submit">Надіслати</button>
+    </form>
+</body>
+</html>
